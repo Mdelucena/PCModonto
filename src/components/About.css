@@ -1,0 +1,204 @@
+.about {
+  background: var(--color-black);
+  overflow: hidden;
+}
+
+/* Grid ocupa 100% da largura — sem container */
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ── Foto sangrada ── */
+.about__image-col {
+  position: relative;
+  overflow: hidden;
+}
+
+.about__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: brightness(0.88);
+}
+
+/* Gradiente suave da foto para o fundo escuro */
+.about__photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    transparent 55%,
+    var(--color-black) 100%
+  );
+}
+
+/* ── Conteúdo ── */
+.about__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 80px 64px 64px;
+  max-width: 100%;
+  align-self: center;
+}
+
+.about__title {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  color: var(--color-white);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.about__title em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+.about__content .gold-divider {
+  margin-bottom: 20px;
+}
+
+.about__text {
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+
+.about__text strong {
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+/* ── Stats em linha ── */
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin-top: 36px;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.about__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  transition: background var(--transition-normal);
+}
+
+.about__stat:hover {
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.about__stat-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+.about__stat-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.5px;
+}
+
+/* ── Frase de destaque ── */
+.about__quote {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+  padding: 20px 24px;
+  border-left: 2px solid var(--color-gold);
+  background: rgba(201, 168, 76, 0.04);
+  border-radius: 0 8px 8px 0;
+}
+
+.about__quote-mark {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--color-gold);
+  opacity: 0.4;
+  flex-shrink: 0;
+  margin-top: -8px;
+}
+
+.about__quote p {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.about__quote em {
+  font-style: normal;
+  color: var(--color-gold);
+  font-weight: 500;
+}
+
+/* ── CTA ── */
+.about__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 13px 32px;
+  background: var(--color-gold);
+  color: var(--color-white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+  transition: all var(--transition-normal);
+  align-self: flex-start;
+}
+
+.about__cta:hover {
+  background: var(--color-gold-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(201, 168, 76, 0.35);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 900px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .about__image-col {
+    height: 420px;
+  }
+
+  .about__photo-overlay {
+    background: linear-gradient(
+      to bottom,
+      transparent 55%,
+      var(--color-black) 100%
+    );
+  }
+
+  .about__content {
+    padding: 48px 24px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .about__image-col {
+    height: 320px;
+  }
+
+  .about__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

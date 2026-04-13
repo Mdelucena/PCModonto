@@ -1,0 +1,218 @@
+.ba {
+  position: relative;
+  padding: 100px 0 80px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.ba__bg-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  opacity: 0.5;
+}
+
+/* Header */
+.ba__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ba__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-black);
+  line-height: 1.2;
+  margin: 12px 0 16px;
+}
+
+.ba__title em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+.ba__subtitle {
+  font-size: 1rem;
+  color: #666;
+  max-width: 440px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid */
+.ba__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.ba__card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  position: relative;
+  aspect-ratio: 4/3;
+}
+
+.ba__slider-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Handle personalizado */
+.ba__handle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  cursor: ew-resize;
+}
+
+.ba__card-label {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 50px;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Placeholder quando não tem imagem */
+.ba__placeholder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #1a1a1a;
+}
+
+.ba__placeholder-before,
+.ba__placeholder-after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ba__placeholder-before {
+  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+  color: rgba(255,255,255,0.3);
+}
+
+.ba__placeholder-after {
+  background: linear-gradient(135deg, #1e1a0e, #2a2208);
+  color: rgba(201, 168, 76, 0.5);
+}
+
+.ba__placeholder-divider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.ba__placeholder-handle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.ba__placeholder-label {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 50px;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  white-space: nowrap;
+  z-index: 3;
+}
+
+/* CTA */
+.ba__cta {
+  text-align: center;
+  margin-top: 56px;
+}
+
+.ba__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 40px;
+  background: var(--color-gold);
+  color: var(--color-black);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+}
+
+.ba__btn:hover {
+  background: var(--color-gold-dark, #b8973a);
+  box-shadow: 0 6px 28px rgba(201, 168, 76, 0.45);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ba {
+    padding: 70px 0 60px;
+  }
+
+  .ba__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ba__card {
+    aspect-ratio: 3/2;
+  }
+}
