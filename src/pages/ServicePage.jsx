@@ -6,6 +6,42 @@ import drPatricia from '../assets/image/dr_patricia.jpeg';
 import porcelanato from '../assets/image/porcelanato.jpg';
 import apontando from '../assets/image/apontando.jpeg';
 import { SERVICES } from '../data/servicesData';
+
+import clareamento1 from '../assets/image/servicos/clareamento_1.png';
+import clareamento2 from '../assets/image/servicos/clareamento_2.png';
+import clareamento3 from '../assets/image/servicos/clareamento_3.png';
+import implante1 from '../assets/image/servicos/implantedentario_1.png';
+import implante2 from '../assets/image/servicos/implantedentario_2.png';
+import implante3 from '../assets/image/servicos/implantedentario_3.png';
+import periodontia1 from '../assets/image/servicos/periodontia_1.png';
+import periodontia2 from '../assets/image/servicos/periodontia_2.png';
+import periodontia3 from '../assets/image/servicos/periodontia3.png';
+import protese1 from '../assets/image/servicos/protesedentaria_1.png';
+import protese2 from '../assets/image/servicos/protesedentaria_2.png';
+import protese3 from '../assets/image/servicos/protesedentaria_3.png';
+import facetas1 from '../assets/image/servicos/facetas_1.png';
+import facetas2 from '../assets/image/servicos/facetas_2.png';
+import facetas3 from '../assets/image/servicos/facetas_3.png';
+import endodontia1 from '../assets/image/servicos/endodontia_1.png';
+import endodontia2 from '../assets/image/servicos/endodontia_2.png';
+import endodontia3 from '../assets/image/servicos/endodontia_3.png';
+import bruxismo1 from '../assets/image/servicos/bruximos_1.png';
+import bruxismo2 from '../assets/image/servicos/bruximos_2.png';
+import bruxismo3 from '../assets/image/servicos/bruxismo_3.png';
+import plastica1 from '../assets/image/servicos/plasticagengival_1.png';
+import plastica2 from '../assets/image/servicos/plasticagengival_2.png';
+import plastica3 from '../assets/image/servicos/plasticagengival_3.png';
+
+const SERVICE_IMAGES = {
+  'clareamento-dental':   [clareamento1, clareamento2, clareamento3],
+  'implantes-dentarios':  [implante1,    implante2,    implante3],
+  'periodontia':          [periodontia1, periodontia2, periodontia3],
+  'protese-dentaria':     [protese1,     protese2,     protese3],
+  'facetas-de-resina':    [facetas1,     facetas2,     facetas3],
+  'endodontia':           [endodontia1,  endodontia2,  endodontia3],
+  'bruxismo':             [bruxismo1,    bruxismo2,    bruxismo3],
+  'plastica-gengival':    [plastica1,    plastica2,    plastica3],
+};
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import './ServicePage.css';
@@ -19,6 +55,7 @@ function maskPhone(value) {
 export default function ServicePage() {
   const { slug } = useParams();
   const service = SERVICES.find((s) => s.slug === slug);
+  const imgs = SERVICE_IMAGES[slug] || [];
   const [openItem, setOpenItem] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
@@ -118,9 +155,10 @@ Gostaria de agendar uma consulta sobre ${service.title}!`;
       {/* ── Hero ── */}
       <section className="sp__hero">
         <div className="sp__hero-image-col">
-          <div className="sp__hero-image-placeholder">
-            <span>{service.title}</span>
-          </div>
+          {imgs[0]
+            ? <img src={imgs[0]} alt={service.title} className="sp__hero-image" />
+            : <div className="sp__hero-image-placeholder"><span>{service.title}</span></div>
+          }
         </div>
         <div className="sp__hero-content">
           <RouterLink to="/" className="sp__back">
@@ -179,9 +217,10 @@ Gostaria de agendar uma consulta sobre ${service.title}!`;
           </div>
 
           <div className="sp__how-right">
-            <div className="sp__how-image-placeholder">
-              <span>{service.title}</span>
-            </div>
+            {imgs[1]
+              ? <img src={imgs[1]} alt={service.title} className="sp__how-image" />
+              : <div className="sp__how-image-placeholder"><span>{service.title}</span></div>
+            }
           </div>
         </div>
       </section>
@@ -190,9 +229,10 @@ Gostaria de agendar uma consulta sobre ${service.title}!`;
       <section className="sp__for-whom">
         <div className="sp__for-whom-inner">
           <div className="sp__for-whom-image">
-            <div className="sp__for-whom-placeholder">
-              <span>Imagem</span>
-            </div>
+            {imgs[2]
+              ? <img src={imgs[2]} alt={service.title} className="sp__for-whom-img" />
+              : <div className="sp__for-whom-placeholder"><span>Imagem</span></div>
+            }
           </div>
           <div className="sp__for-whom-content">
             <span className="sp__section-label">Indicação</span>
@@ -223,10 +263,10 @@ Gostaria de agendar uma consulta sobre ${service.title}!`;
             }}
           >
             <span className="sp__badge">Dentista Especialista</span>
-            <h2 className="sp__doctor-title">Dra. Patrícia Monteiro</h2>
+            <h2 className="sp__doctor-title">Dra. Patrícia Castro de Medeiros</h2>
             <p className="sp__doctor-text">
               Com mais de 25 anos de experiência e formação sólida em Periodontia, Prótese e Implantodontia pela FOP/UPE,
-              a Dra. Patrícia Monteiro é referência em odontologia especializada em Recife. Atende na mesma clínica há
+              a Dra. Patrícia Castro de Medeiros é referência em odontologia especializada em Recife. Atende na mesma clínica há
               25 anos com a mesma dedicação: entender cada paciente e devolver confiança através de um sorriso saudável.
             </p>
             <a href="https://wa.me/5581986284435" className="sp__btn sp__btn--gold">
@@ -234,7 +274,7 @@ Gostaria de agendar uma consulta sobre ${service.title}!`;
             </a>
           </div>
           <div className="sp__doctor-photo">
-            <img src={drPatricia} alt="Dra. Patrícia Monteiro" />
+            <img src={drPatricia} alt="Dra. Patrícia Castro de Medeiros" />
           </div>
         </div>
       </section>

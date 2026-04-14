@@ -55,7 +55,20 @@
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
   position: relative;
-  aspect-ratio: 4/3;
+  height: 320px;
+}
+
+.ba__slider-wrap {
+  height: 100%;
+}
+
+.ba__slider-wrap > div {
+  height: 100% !important;
+}
+
+.ba__slider-wrap img {
+  object-fit: cover !important;
+  height: 100% !important;
 }
 
 .ba__slider-wrap {
@@ -212,7 +225,4 @@
     grid-template-columns: 1fr;
   }
 
-  .ba__card {
-    aspect-ratio: 3/2;
-  }
 }

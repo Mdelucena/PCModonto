@@ -7,13 +7,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #25d366;
-  color: var(--color-white);
+  background: transparent;
   border-radius: 50%;
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
   z-index: 999;
   transition: all var(--transition-normal);
   animation: pulse-whatsapp 2s infinite;
+}
+
+.whatsapp-btn__icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
 }
 
 .whatsapp-btn:hover {

@@ -5,7 +5,7 @@ export const SERVICES = [
     badge: 'Saúde Gengival',
     short: 'Saúde e estética da gengiva',
     heroText:
-      'Especialidade focada na prevenção, diagnóstico e tratamento de doenças que afetam os tecidos de suporte dos dentes. Na PCM Odonto, a Dra. Patrícia Monteiro oferece tratamento completo para gengivas saudáveis e um sorriso harmonioso.',
+      'Especialidade focada na prevenção, diagnóstico e tratamento de doenças que afetam os tecidos de suporte dos dentes. Na PCM Odonto, a Dra. Patrícia Castro de Medeiros oferece tratamento completo para gengivas saudáveis e um sorriso harmonioso.',
     about:
       'A Periodontia cuida da saúde da gengiva e dos tecidos que sustentam os dentes. Doenças como gengivite e periodontite, quando não tratadas, podem levar à perda dentária e até afetar a saúde geral. O tratamento precoce é essencial para preservar seu sorriso por toda a vida.',
     howItWorks: {
@@ -63,7 +63,7 @@ export const SERVICES = [
     badge: 'Solução Definitiva',
     short: 'Solução definitiva e moderna',
     heroText:
-      'Os implantes dentários são a solução mais moderna e duradoura para dentes perdidos. Na PCM Odonto, a Dra. Patrícia Monteiro realiza todo o processo com segurança, tecnologia e resultados que transformam vidas.',
+      'Os implantes dentários são a solução mais moderna e duradoura para dentes perdidos. Na PCM Odonto, a Dra. Patrícia Castro de Medeiros realiza todo o processo com segurança, tecnologia e resultados que transformam vidas.',
     about:
       'O implante é um parafuso de titânio que substitui a raiz do dente, sendo fixado diretamente no osso. Sobre ele, coloca-se uma prótese que imita perfeitamente o dente natural em forma, cor e função. É a opção mais estável, confortável e duradoura disponível na odontologia moderna.',
     howItWorks: {
@@ -199,6 +199,35 @@ export const SERVICES = [
         'Parceiro que relata ranger de dentes durante o sono',
         'Tensão muscular na face e pescoço',
         'Diagnóstico de bruxismo por profissional de saúde',
+      ],
+    },
+  },
+  {
+    slug: 'plastica-gengival',
+    title: 'Plástica Gengival',
+    badge: 'Harmonização do Sorriso',
+    short: 'Harmonização e estética do sorriso',
+    heroText:
+      'Corrija o sorriso gengival e harmonize a estética do seu rosto. Na PCM Odonto, a Dra. Patrícia Castro de Medeiros realiza a plástica gengival com precisão e tecnologia para resultados naturais e duradouros.',
+    about:
+      'A Plástica Gengival é um procedimento cirúrgico que remodela o contorno da gengiva para melhorar a estética do sorriso. É indicada para pacientes com excesso de gengiva aparente ao sorrir — chamado de sorriso gengival — ou com gengivas assimétricas e irregulares.',
+    howItWorks: {
+      text: 'O procedimento é realizado com anestesia local, utilizando bisturi convencional ou laser. A Dra. Patrícia planeja digitalmente o novo contorno gengival antes de qualquer intervenção, garantindo simetria e harmonia com o restante do rosto.',
+      items: [
+        { title: 'Planejamento digital', content: 'Análise do sorriso e marcação do novo contorno gengival para resultado simétrico e natural.' },
+        { title: 'Anestesia local', content: 'Procedimento indolor realizado com anestesia local para total conforto do paciente.' },
+        { title: 'Recontorno cirúrgico', content: 'Remoção do excesso de gengiva com bisturi ou laser para exposição harmoniosa dos dentes.' },
+        { title: 'Pós-operatório simples', content: 'Recuperação rápida com orientações de cuidados e acompanhamento da cicatrização.' },
+      ],
+    },
+    forWhom: {
+      text: 'A Plástica Gengival é indicada para pacientes que desejam melhorar a estética do sorriso relacionada à gengiva.',
+      items: [
+        'Sorriso gengival — exposição excessiva da gengiva ao sorrir',
+        'Gengivas assimétricas ou irregulares',
+        'Dentes que parecem curtos por excesso de gengiva',
+        'Desejo de harmonizar o sorriso antes de facetas ou clareamento',
+        'Indicação após tratamento periodontal',
       ],
     },
   },

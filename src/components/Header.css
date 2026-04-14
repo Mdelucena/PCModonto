@@ -1,18 +1,17 @@
 /* Header compacto — fica escondido no topo e aparece só ao scrollar */
 .header {
   position: fixed;
-  top: -100px;          /* começa fora da tela */
+  top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.08);
-  transition: top 0.35s ease;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: border-color 0.35s ease;
 }
 
 .header--visible {
-  top: 0;               /* desliza para baixo ao scrollar */
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .header__inner {

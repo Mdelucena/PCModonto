@@ -254,6 +254,15 @@
   background: #2a2a2a;
 }
 
+.sp__hero-image {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 .sp__hero-image-placeholder {
   width: 100%;
   height: 100%;
@@ -401,6 +410,17 @@
 
 /* Imagem lado direito */
 .sp__how-right { display: flex; align-items: center; justify-content: center; }
+
+.sp__how-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
 .sp__how-image-placeholder {
   width: 100%;
   aspect-ratio: 4/3;
@@ -433,9 +453,19 @@
   align-items: center;
 }
 
+.sp__for-whom-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
 .sp__for-whom-placeholder {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 4/3;
   border-radius: 8px;
   background: #f0ede8;
   display: flex;
@@ -658,25 +688,56 @@
 
 /* ── Responsivo ── */
 @media (max-width: 900px) {
+  /* Hero */
   .sp__hero { grid-template-columns: 1fr; }
-  .sp__hero-image-col { min-height: 300px; }
-  .sp__hero-image-placeholder { min-height: 300px; }
-  .sp__hero-content { padding: 40px 24px; }
+  .sp__hero-image-col { min-height: 260px; }
+  .sp__hero-image {
+    min-height: 260px;
+    max-height: 340px;
+    height: 300px;
+  }
+  .sp__hero-image-placeholder { min-height: 260px; }
+  .sp__hero-content { padding: 36px 20px; }
 
-  .sp__how-inner,
-  .sp__for-whom-inner,
-  .sp__doctor-inner { grid-template-columns: 1fr; padding: 0 24px; }
+  /* Como Funciona */
+  .sp__how { padding: 56px 0; }
+  .sp__how-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 0 20px;
+  }
+  .sp__how-right { order: -1; }
+  .sp__how-image {
+    aspect-ratio: 16/9;
+    max-height: 260px;
+  }
 
-  .sp__for-whom-inner { direction: ltr; }
-  .sp__doctor { padding: 56px 24px; }
+  /* Para quem */
+  .sp__for-whom { padding: 56px 0; }
+  .sp__for-whom-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 0 20px;
+    direction: ltr;
+  }
+  .sp__for-whom-img {
+    aspect-ratio: 16/9;
+    max-height: 260px;
+  }
+
+  /* Dra. Patricia */
+  .sp__doctor { padding: 56px 20px; }
+  .sp__doctor-inner { grid-template-columns: 1fr; padding: 0; }
   .sp__doctor-content { padding: 32px 24px; }
-  .sp__doctor-photo img { min-height: 280px; }
+  .sp__doctor-photo img { min-height: 260px; max-height: 320px; }
 
-  .sp__cta { padding: 0 24px 56px; }
+  /* CTA final */
+  .sp__cta { padding: 0 20px 56px; }
   .sp__cta-inner { grid-template-columns: 1fr; }
   .sp__cta-img-col { display: none; }
-  .sp__cta-form-col { padding: 40px 24px; }
+  .sp__cta-form-col { padding: 36px 24px; }
 
+  /* Navbar */
   .sp__navbar {
     display: flex;
     justify-content: space-between;
@@ -690,4 +751,28 @@
   .sp__navbar-logo img { width: 100px; }
   .sp__hamburger { display: flex; }
   .sp__mobile-menu { display: flex; }
+}
+
+@media (max-width: 480px) {
+  .sp__hero-image {
+    min-height: 220px;
+    height: 240px;
+    max-height: 280px;
+  }
+  .sp__hero-image-col { min-height: 220px; }
+  .sp__hero-content { padding: 28px 16px; }
+
+  .sp__how-inner,
+  .sp__for-whom-inner { padding: 0 16px; gap: 24px; }
+
+  .sp__how-image,
+  .sp__for-whom-img {
+    aspect-ratio: 16/9;
+    max-height: 220px;
+  }
+
+  .sp__about { padding: 48px 16px; }
+  .sp__doctor { padding: 40px 16px; }
+  .sp__cta { padding: 0 16px 48px; }
+  .sp__cta-form-col { padding: 28px 16px; }
 }

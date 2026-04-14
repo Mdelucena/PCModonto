@@ -1,30 +1,38 @@
 import ReactCompareImage from 'react-compare-image';
+import clareamentoAntes from '../assets/image/antes_depois/clareamento_antes.png';
+import clareamentoDepois from '../assets/image/antes_depois/clareamento_depois.png';
+import facetasAntes from '../assets/image/antes_depois/facetas_antes.png';
+import facetasDepois from '../assets/image/antes_depois/facetas_depois.png';
+import proteseAntes from '../assets/image/antes_depois/implante_antes.png';
+import proteseDepois from '../assets/image/antes_depois/implante_depois.png';
+import plasticaAntes from '../assets/image/antes_depois/plastica_antes.png';
+import plasticaDepois from '../assets/image/antes_depois/plastica_depois.png';
 import './BeforeAfter.css';
 
 const CASES = [
   {
     id: 1,
     label: 'Clareamento Dental',
-    before: null,
-    after: null,
+    before: clareamentoAntes,
+    after: clareamentoDepois,
   },
   {
     id: 2,
     label: 'Facetas de Resina',
-    before: null,
-    after: null,
+    before: facetasAntes,
+    after: facetasDepois,
   },
   {
     id: 3,
-    label: 'Implante Dentário',
-    before: null,
-    after: null,
+    label: 'Plástica Gengival',
+    before: plasticaAntes,
+    after: plasticaDepois,
   },
   {
     id: 4,
     label: 'Prótese Dentária',
-    before: null,
-    after: null,
+    before: proteseAntes,
+    after: proteseDepois,
   },
 ];
 

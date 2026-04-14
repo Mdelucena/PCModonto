@@ -1,70 +1,10 @@
 import { Link } from 'react-scroll';
-import { ArrowDown, Phone, MapPin } from 'lucide-react';
-import logo from '../assets/icons/logo.png';
 import heroImg from '../assets/image/foto hero.jpeg';
 import './Hero.css';
-
-const NAV_ITEMS = [
-  { to: 'hero', label: 'Início' },
-  { to: 'services', label: 'Serviços' },
-  { to: 'about', label: 'Sobre Nós' },
-  { to: 'contact', label: 'Contato' },
-];
 
 export default function Hero() {
   return (
     <section id="hero" className="hero">
-      <div className="hero__overlay" />
-
-      {/* Canto superior esquerdo — telefone e localização */}
-      <div className="hero__header-info">
-        <a href="https://wa.me/5581986284435" className="hero__info-item">
-          <Phone size={13} strokeWidth={2} />
-          (81) 98628-4435
-        </a>
-        <a
-          href="https://maps.google.com/?q=Rua+General+Joaquim+Inácio,+830,+Ilha+do+Leite,+Recife,+PE"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hero__info-item"
-        >
-          <MapPin size={13} strokeWidth={2} />
-          Ver Localização
-        </a>
-      </div>
-
-      {/* Canto superior direito — só Agendar Consulta */}
-      <div className="hero__header-actions">
-        <a href="https://wa.me/5581986284435" className="hero__btn hero__btn--primary hero__btn--sm">
-          Agendar Consulta
-        </a>
-      </div>
-
-      {/* Logo + nav centralizados */}
-      <div className="hero__header container">
-        <div className="hero__header-center">
-          <div className="hero__logo-wrapper">
-            <img src={logo} alt="PCM Odonto" className="hero__logo" />
-          </div>
-          <nav className="hero__nav">
-            {NAV_ITEMS.map(({ to, label }) => (
-              <Link
-                key={to}
-                to={to}
-                spy
-                smooth
-                offset={-70}
-                duration={600}
-                className="hero__nav-link"
-                activeClass="hero__nav-link--active"
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </div>
-
       {/* Split 50/50: texto esquerda | imagem direita */}
       <div className="hero__body">
         {/* Lado esquerdo — texto */}
@@ -78,6 +18,11 @@ export default function Hero() {
               Tratamentos personalizados em estética e saúde bucal,
               com tecnologia de ponta e atendimento humanizado.
             </p>
+            <div className="hero__pills">
+              <span className="hero__pill">✦ +25 anos de experiência</span>
+              <span className="hero__pill">✦ Ambiente acolhedor</span>
+              <span className="hero__pill">✦ Resultado garantido</span>
+            </div>
             <div className="hero__actions">
               <a href="https://wa.me/5581986284435" className="hero__btn hero__btn--primary">
                 Agendar Consulta
@@ -87,13 +32,9 @@ export default function Hero() {
               </Link>
             </div>
             <div className="hero__no-plan">
-              <span className="hero__no-plan-badge">✓ Aceitamos plano de saúde</span>
+              <span className="hero__no-plan-badge">✦ Convênios aceitos em procedimentos selecionados</span>
             </div>
           </div>
-
-          <Link to="services" smooth offset={-70} duration={600} className="hero__scroll">
-            <ArrowDown size={20} />
-          </Link>
         </div>
 
         {/* Lado direito — imagem preenche tudo */}

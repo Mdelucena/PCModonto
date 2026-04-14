@@ -1,4 +1,3 @@
-import { Link } from 'react-scroll';
 import ambienteImg from '../assets/image/ammbiente lista .jpeg';
 import porcelanatoBg from '../assets/image/porcelanato.jpg';
 import './Clinic.css';
@@ -29,12 +28,12 @@ export default function Clinic() {
           <hr className="clinic__divider" />
 
           <p className="clinic__text">
-            Na PCM Odonto, localizada na Ilha do Leite, Recife, oferecemos uma experiência odontológica acolhedora e personalizada. Liderada pela <strong>Dra. Patrícia Monteiro</strong>, nossa clínica une tecnologia de ponta, equipe especializada e atendimento humanizado para transformar sorrisos com conforto, segurança e resultados de qualidade.
+            Na PCM Odonto, localizada na Ilha do Leite, Recife, oferecemos uma experiência odontológica acolhedora e completamente personalizada. Liderada pela <strong>Dra. Patrícia Castro de Medeiros</strong>, nossa clínica une tecnologia de ponta, equipe altamente especializada e um atendimento profundamente humanizado para transformar sorrisos com conforto, segurança e resultados de qualidade que falam por si.
           </p>
 
-          <Link to="about" smooth offset={-70} duration={600} className="clinic__btn">
-            Sobre a Clínica
-          </Link>
+          <p className="clinic__text">
+            Aqui, cada paciente é tratado com atenção individual, porque acreditamos que um sorriso saudável começa com uma relação de confiança.
+          </p>
         </div>
 
       </div>

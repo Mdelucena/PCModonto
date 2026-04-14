@@ -1,20 +1,26 @@
-import { Star, Quote } from 'lucide-react';
+import { Star } from 'lucide-react';
+import claraImg from '../assets/image/coments/clara.jpeg';
+import rafaelImg from '../assets/image/coments/rafael.jpeg';
+import mateusImg from '../assets/image/coments/mateus.jpeg';
 import './Testimonials.css';
 
 const TESTIMONIALS = [
   {
-    name: 'Maria Silva',
-    text: 'Clínica incrível! Ambiente acolhedor e equipe extremamente profissional. Meu sorriso nunca esteve tão bonito.',
+    name: 'Clara Farias',
+    photo: claraImg,
+    text: 'Ambiente acolhedor e equipe incrível! Meu sorriso nunca esteve tão bonito.',
     rating: 5,
   },
   {
-    name: 'João Santos',
-    text: 'Excelente experiência do início ao fim. O atendimento personalizado faz toda a diferença. Super recomendo!',
+    name: 'Rafael Dias',
+    photo: rafaelImg,
+    text: 'Atendimento personalizado do início ao fim. Faz toda a diferença. Super recomendo!',
     rating: 5,
   },
   {
-    name: 'Ana Oliveira',
-    text: 'Profissionalismo de alto nível. Fiz meu tratamento com total confiança e o resultado superou todas as minhas expectativas.',
+    name: 'Mateus Lucena',
+    photo: mateusImg,
+    text: 'Profissionalismo de alto nível. Tratamento com total confiança e resultado que superou tudo.',
     rating: 5,
   },
 ];
@@ -35,9 +41,8 @@ export default function Testimonials() {
         </div>
 
         <div className="testimonials__grid">
-          {TESTIMONIALS.map(({ name, text, rating }) => (
+          {TESTIMONIALS.map(({ name, photo, text, rating }) => (
             <div key={name} className="testimonial-card">
-              <Quote size={32} strokeWidth={1} className="testimonial-card__quote" />
               <div className="testimonial-card__stars">
                 {Array.from({ length: rating }).map((_, i) => (
                   <Star key={i} size={16} fill="var(--color-gold)" color="var(--color-gold)" />
@@ -45,7 +50,10 @@ export default function Testimonials() {
               </div>
               <p className="testimonial-card__text">{text}</p>
               <div className="testimonial-card__divider" />
-              <span className="testimonial-card__name">{name}</span>
+              <div className="testimonial-card__author">
+                <img src={photo} alt={name} className="testimonial-card__avatar" />
+                <span className="testimonial-card__name">{name}</span>
+              </div>
             </div>
           ))}
         </div>
